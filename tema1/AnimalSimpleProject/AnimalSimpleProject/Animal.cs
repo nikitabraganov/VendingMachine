@@ -9,8 +9,8 @@ namespace AnimalSimpleProject
     class Animal
     {
 
-        public string name = "";
-        public string sound = "";
+        protected string name = "";
+        protected string sound = "";
 
 
         public virtual void speak()
