@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace AnimalSimpleProject
 {
-    class Animal
+    abstract class Animal
     {
 
-        protected string name = "";
-        protected string sound = "";
+        public string name { get; protected set; }
+        public string sound { get; protected set; }
 
 
-        public virtual void speak()
+        public void speak()
         {
             Console.WriteLine(name + " says " + sound);
 

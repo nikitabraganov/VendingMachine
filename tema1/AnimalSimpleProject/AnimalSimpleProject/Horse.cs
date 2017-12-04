@@ -13,9 +13,5 @@ namespace AnimalSimpleProject
             name = "Horse";
             sound = "Pfffrt";
         }
-        public override void speak()
-        {
-            Console.WriteLine(name + " says " + sound);
-        }
     }
 }
