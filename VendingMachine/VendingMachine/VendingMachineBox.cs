@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace VendingMachine
 {
-    public class ProductType
+    class VendingMachineBox
     {
-        public string Name { get; }
+        Dispenser VendingMachineDispenser;
     }
 }

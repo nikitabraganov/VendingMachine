@@ -6,29 +6,15 @@ using System.Threading.Tasks;
 
 namespace VendingMachine
 {
-    public class ContainableItem
+    public class ContainableItem : Product
     {
-        public List<Product> ListOfMyProducts = new List<Product>();
-        public int NewPosition = 0;
+        public Position PositionInVendingMachine;
 
-        public void AddItemToCollection(Product p)
+        public ContainableItem(int NewId, string NewName, float NewPrice, int NewSize, TypeOfProduct NewType, int row, int column) : base(NewId, NewName, NewPrice, NewSize, NewType)
         {
-            p.Position = NewPosition++;
-            ListOfMyProducts.Add(p);
+            PositionInVendingMachine = new Position(row, column);
         }
 
-        public void RemoveItem(Product p)
-        {
-            ListOfMyProducts.RemoveAll(r => (r.Position == p.Position));
-        }
-
-        public int Count()
-        {
-            return ListOfMyProducts.Count();
-        }
-        public Product GetItem(int id)
-        {
-            return ListOfMyProducts.Find(r => r.Id == id);
-        }
     }
 }
+
