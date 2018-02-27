@@ -6,17 +6,13 @@ using System.Threading.Tasks;
 
 namespace AnimalSimpleProject
 {
-    class Animal
+    class Dog : Animal
     {
-
-        protected string name = "";
-        protected string sound = "";
-
-
-        public virtual void speak()
+        public Dog()
         {
-            Console.WriteLine(name + " says " + sound);
-
+            name = "Dog";
+            sound = "Bark";
         }
+
     }
 }

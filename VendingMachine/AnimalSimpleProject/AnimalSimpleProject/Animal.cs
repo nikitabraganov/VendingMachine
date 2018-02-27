@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace AnimalSimpleProject
 {
-    class Dog : Animal
+    abstract class Animal
     {
-        public Dog()
-        {
-            name = "Dog";
-            sound = "Bark";
-        }
-        public override void speak()
+
+        public string name { get; protected set; }
+        public string sound { get; protected set; }
+
+
+        public void speak()
         {
             Console.WriteLine(name + " says " + sound);
+
         }
     }
 }
