@@ -6,16 +6,27 @@ using System.Threading.Tasks;
 
 namespace VendingMachine
 {
-    class Dispenser : ContainableItemCollection
+    public class Dispenser : Observer
     {
 
-        public Product Dispense(int id)
+        public Dispenser(PaymentTerminal paymentTerminal)
         {
-            if (ListOfMyContainableItems.Find(r => r.ProductId == id).Quantity > 0)
-            {
-                --ListOfMyContainableItems.Find(r => r.ProductId == id).Quantity;
-            }
-            return ListOfMyContainableItems.Find(r => r.ProductId == id);
+            this.paymentTerminal = paymentTerminal;
+            this.paymentTerminal.Attach(this);
         }
+
+        public override void Update()
+        {
+            
+
+        }
+        //public Product Dispense(int id)
+        //{
+        //    if (ListOfMyContainableItems.Find(r => r.ProductId == id).Quantity > 0)
+        //    {
+        //        --ListOfMyContainableItems.Find(r => r.ProductId == id).Quantity;
+        //    }
+        //    return ListOfMyContainableItems.Find(r => r.ProductId == id);
+        //}
     }
 }

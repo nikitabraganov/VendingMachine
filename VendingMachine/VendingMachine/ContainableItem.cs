@@ -10,7 +10,7 @@ namespace VendingMachine
     {
         public Position PositionInVendingMachine;
 
-        public ContainableItem(int NewId, string NewName, float NewPrice, int NewSize, TypeOfProduct NewType, int row, int column) : base(NewId, NewName, NewPrice, NewSize, NewType)
+        public ContainableItem(int NewId, string NewName, float NewPrice, int NewSize, int NewQuantity, TypeOfProduct NewType, int row, int column) : base(NewId, NewName, NewPrice, NewSize, NewQuantity, NewType)
         {
             PositionInVendingMachine = new Position(row, column);
         }
