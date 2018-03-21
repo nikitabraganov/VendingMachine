@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,23 +8,19 @@ using System.Threading.Tasks;
 
 namespace VendingMachine
 {
-    public class ContainableItemCollection
+    public class ContainableItemCollection : IEnumerable<ContainableItem>
     {
         const int ColumnSize = 5;
         const int RowSize = 2;
         public List<ContainableItem> ListOfMyContainableItems = new List<ContainableItem>();
 
-        public void LoadMyItemsToCollection()
+        public IEnumerator<ContainableItem> GetEnumerator()
         {
-            var allLines = File.ReadAllLines(@"C:\Users\nic_v\Documents\remote-learning\VendingMachine\VendingMachine\Objects\ProductsFromVendingMachine.txt");
-            foreach (var line in allLines)
-            {
-                var splittedLines = line.Split(separator: ',');
-                if (splittedLines != null && splittedLines.Any())
-                {
-                    ListOfMyContainableItems.Add(new ContainableItem(Int32.Parse(splittedLines[0]), splittedLines[1], float.Parse(splittedLines[2]), Int32.Parse(splittedLines[3]), (Product.TypeOfProduct)Enum.Parse(typeof(Product.TypeOfProduct), splittedLines[4]), Int32.Parse(splittedLines[5]), Int32.Parse(splittedLines[6])));
-                }
-            }
+            return ListOfMyContainableItems.GetEnumerator();
+        }
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
         public void AddItemToCollection(ContainableItem p)
         {
@@ -42,20 +39,6 @@ namespace VendingMachine
         public Product GetItem(int id)
         {
             return ListOfMyContainableItems.Find(r => r.ProductId == id);
-        }
-        public void DisplayProduct()
-        {
-            foreach (var a in ListOfMyContainableItems)
-            {
-                Console.WriteLine(a.PositionInVendingMachine.Row);
-                Console.WriteLine(a.PositionInVendingMachine.Column);
-                Console.WriteLine(a.Name);
-                Console.WriteLine(a.Quantity);
-                Console.WriteLine(a.CategoriesOfAProduct);
-                Console.WriteLine(a.ProductId);
-                Console.WriteLine(a.Price + " lei");
-                Console.WriteLine();
-            }
         }
     }
 }

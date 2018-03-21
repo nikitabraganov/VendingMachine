@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace VendingMachine
 {
-    class VendingMachineBox
+    abstract public class Observer
     {
-        Dispenser VendingMachineDispenser;
+        protected PaymentTerminal paymentTerminal;
+        public abstract void Update();
     }
 }

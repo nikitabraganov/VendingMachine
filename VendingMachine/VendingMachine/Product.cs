@@ -12,6 +12,7 @@ namespace VendingMachine
         public string Name { get; protected set; }
         public float Price { get; protected set; }
         public int Quantity { get; set; }
+        public int Size { get; set; }
         public enum TypeOfProduct
         {
             AlcoholicDrink = 1,
@@ -19,13 +20,14 @@ namespace VendingMachine
             Food = 3
         };
         public TypeOfProduct CategoriesOfAProduct { get; protected set; }
-        public Product(int id, string name, float price, int size, TypeOfProduct type)
+        public Product(int id, string name, float price, int size, int quantity, TypeOfProduct type)
         {
             ProductId = id;
             Name = name;
             Price = price;
             Size = size;
             CategoriesOfAProduct = type;
+            Quantity = quantity;
         }
     }
 }

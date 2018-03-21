@@ -42,14 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CashPayment.cs" />
     <Compile Include="ContainableItem.cs" />
     <Compile Include="ContainableItemCollection.cs" />
+    <Compile Include="CreditCardPayment.cs" />
+    <Compile Include="DataCollector.cs" />
     <Compile Include="Dispenser.cs" />
+    <Compile Include="Observer.cs" />
+    <Compile Include="PaymentTerminal.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VendingMachineBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
