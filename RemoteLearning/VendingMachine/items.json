@@ -1,0 +1,18 @@
+﻿[
+  {
+    "id": "1",
+    "name": "Coca-Cola",
+    "price": "5",
+    "quantity": "3",
+    "size": "1",
+    "category": "Beverages"
+  },
+  {
+    "id": "2",
+    "name": "Fanta",
+    "price": "5",
+    "quantity": "3",
+    "size": "3",
+    "category": "Beverages"
+  }
+]
